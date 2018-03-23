@@ -1,0 +1,34 @@
+
+# MySQL BEGIN
+database is metastore
+select * from TBLS;
+# MySQL END
+
+# Hive CLI config file
+$HIVE_HOME/bin/.hiverc
+$HOME/.hiverc
+
+
+# create database
+create database d1;
+create database if not exists d1;
+
+# show databasess
+show databases;
+
+# show which database is selected
+set hive.cli.print.current.db=true
+
+# switch to database
+use d1;
+
+# list tables
+show tables;
+
+# describe table
+describe table1;
+
+# run hive commands from script
+hive -f filename.hql
+
+
