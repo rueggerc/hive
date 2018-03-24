@@ -1,13 +1,18 @@
 
-# MySQL BEGIN
+############## MySQL BEGIN
 database is metastore
 select * from TBLS;
-# MySQL END
+############## MySQL END
+
+############## HDFS BEGIN
+hdfs dfs -cat /inputs/transactions.csv | more
+hdfs dfs -ls /user/hadoop
+hdfs dfs -mkdir /usr/hadoop/hive
+############## HDFS END
 
 # Hive CLI config file
 $HIVE_HOME/bin/.hiverc
 $HOME/.hiverc
-
 
 # create database
 create database d1;
@@ -30,5 +35,16 @@ describe table1;
 
 # run hive commands from script
 hive -f filename.hql
+
+# Load local file into table (inserts or appends)
+load data local inpath '/home/hadoop/code/hive/etc/data/data1.txt' into table table1;
+
+# Load local file into table (overwrites)
+load data local inpath '/home/hadoop/code/hive/etc/data/data1.txt' overwrite table table1;
+
+# select
+select * from table1;
+
+
 
 
