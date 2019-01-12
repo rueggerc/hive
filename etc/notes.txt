@@ -40,6 +40,11 @@ describe table1;
 # run hive commands from script
 hive -f filename.hql
 
+
+# Hive Date Default Format
+YYYY-MM-DD
+
+
 # Load local file into table (inserts or appends)
 load data local inpath '/home/hadoop/code/hive/etc/data/data1.txt' into table table1;
 
@@ -57,6 +62,8 @@ Got CapitalOne transactions into Hive
 Run Transformation:
 Flink2->TransformCapitalOne
 capone.hql
+
+Data Stored at: /user/hadoop/capone
 
 Queries
 use db1;
