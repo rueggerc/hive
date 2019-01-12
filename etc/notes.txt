@@ -10,6 +10,10 @@ hdfs dfs -ls /user/hadoop
 hdfs dfs -mkdir /usr/hadoop/hive
 ############## HDFS END
 
+
+#Run Hive Shell
+hive
+
 # Hive CLI config file
 $HIVE_HOME/bin/.hiverc
 $HOME/.hiverc
@@ -44,6 +48,29 @@ load data local inpath '/home/hadoop/code/hive/etc/data/data1.txt' overwrite tab
 
 # select
 select * from table1;
+
+
+==========================================================================================
+# 01/12/2019
+==========================================================================================
+Got CapitalOne transactions into Hive
+Run Transformation:
+Flink2->TransformCapitalOne
+capone.hql
+
+Queries
+use db1;
+select sum(debit), category from capone_txn group by category;
+
+
+
+
+ 
+
+
+
+
+
 
 
 
